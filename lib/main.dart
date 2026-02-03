@@ -6,11 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
+import 'config/dependencies.dart';
 import 'routing/router.dart';
 import 'ui/core/localization/applocalization.dart';
 import 'ui/core/themes/theme.dart';
-import 'ui/welcome/view_models/welcome_view_model.dart';
-import 'data/repositories/welcome_repository.dart';
 
 void main() {
   runApp(const MainApp());
@@ -22,15 +21,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => WelcomeViewModel(WelcomeRepositoryImpl()),
-        ),
-      ],
+      providers: buildGlobalProviders(),
       child: MaterialApp.router(
         localizationsDelegates: [
           GlobalWidgetsLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
           AppLocalizationDelegate(),
         ],
         supportedLocales: const [

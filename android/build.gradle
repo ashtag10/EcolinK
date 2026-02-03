@@ -3,6 +3,26 @@ allprojects {
         google()
         mavenCentral()
     }
+
+    // Resolution strategy: force certain AndroidX versions to maintain compatibility
+    // with the project's Android Gradle Plugin without upgrading it immediately.
+    configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            // Force older, widely compatible versions
+            if (details.requested.group == 'androidx.activity') {
+                details.useVersion "1.7.2"
+            }
+            if (details.requested.group == 'androidx.core' && details.requested.name == 'core-ktx') {
+                details.useVersion "1.10.1"
+            }
+            if (details.requested.group == 'androidx.core' && details.requested.name == 'core') {
+                details.useVersion "1.10.1"
+            }
+            if (details.requested.group == 'androidx.navigationevent' && details.requested.name == 'navigationevent-android') {
+                details.useVersion "1.0.0"
+            }
+        }
+    }
 }
 
 rootProject.buildDir = "../build"

@@ -29,7 +29,7 @@ class WelcomeRepositoryImpl implements WelcomeRepository {
           title: 'Comment recycler les bouteilles plastiques ?',
           description:
               'Apprenez les bonnes pratiques pour recycler vos bouteilles plastiques',
-          imageUrl: 'assets/images/plastic_bottles.jpg',
+          imageUrl: 'assets/images/bottle_plastic.jpeg',
           actionText: 'ME FORMER',
           actionUrl: '/training/plastic-bottles',
         ),
@@ -37,7 +37,7 @@ class WelcomeRepositoryImpl implements WelcomeRepository {
           id: '2',
           title: 'Recyclage du verre',
           description: 'Découvrez comment recycler le verre efficacement',
-          imageUrl: 'assets/images/glass_recycling.jpg',
+          imageUrl: 'assets/images/glass_recycling.jpeg',
           actionText: 'ME FORMER',
           actionUrl: '/training/glass',
         ),
@@ -76,7 +76,7 @@ class WelcomeRepositoryImpl implements WelcomeRepository {
           title: 'Recyclage en entreprise',
           date: 'Lundi 20 juin',
           description: 'Comment implémenter le recyclage dans votre entreprise',
-          imageUrl: 'assets/images/business_recycling.jpg',
+          imageUrl: 'assets/images/business_recycling.jpeg',
           readMoreText: 'Lire...',
         ),
       ];
